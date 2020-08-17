@@ -2,7 +2,7 @@ module Authenticable
   def current_admin
     if decoded_token
       adminId = decoded_token[0]['adminId']
-      @current_admin = Admin.find_by(id: adminId)
+      @current_admin = Admin.find_by(id: adminId) rescue ActiveRecord::RecordNotFound
   end
 
   end

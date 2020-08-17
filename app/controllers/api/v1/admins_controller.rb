@@ -1,7 +1,7 @@
 class Api::V1::AdminsController < ApplicationController
   
   before_action :authorized, only: %i[show create]
-  before_action :set_admin, only: %i[show create]
+  before_action :set_admin, only: %i[show]
 
   # GET /admins/1
   def show

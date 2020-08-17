@@ -59,4 +59,10 @@ end
    assert_response :unauthorized
  end
 
+ test 'destroy admin should destroy linked rider' do
+  assert_difference('Rider.count', -1) do
+    admins(:one).destroy
+  end
+end
+
 end
