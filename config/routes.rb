@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :v1 do
     resources :admins, only: %i[ create show login ]
     post "admins/login", to: "admins#login"
+    resources :riders
   end
 end
 end
