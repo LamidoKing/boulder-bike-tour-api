@@ -204,7 +204,7 @@ rider19 = Rider.create!(
 rider20 = Rider.create!(
     first_name: "Jason",
     last_name: "Nichols",
-    city_of_origin: "HAlexandria",
+    city_of_origin: "Alexandria",
     state_of_origin: "VA",
     latitude: 40.01,
     longitude: -105.32,
