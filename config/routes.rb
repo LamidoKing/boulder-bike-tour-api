@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :admins, only: %i[ create show login ]
     post "admins/login", to: "admins#login"
     resources :riders
+    resources :submissions
   end
 end
 end
