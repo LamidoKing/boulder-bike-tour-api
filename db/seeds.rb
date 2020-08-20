@@ -7,10 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Rider.delete_all
-
-
-
-
+Submission.delete_all
 
 rider1 = Rider.create!(
     first_name: "Dustin",
@@ -211,21 +208,15 @@ rider20 = Rider.create!(
     admin_id: 1
     )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     puts "Created Riders"
+
+    20.times do
+      Faker::Config.random = Random.new(50)
+        submission = Submission.create!(
+          first_name: Faker::Name.first_name,
+          last_name: Faker::Name.last_name,
+          email: Faker::Internet.unique.email,
+          slogan: Faker::Lorem.sentence(word_count: 3)
+        )
+        puts "Created a brand new product: #{submission.slogan}"
+      end
