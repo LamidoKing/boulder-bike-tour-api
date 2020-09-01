@@ -17,13 +17,13 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  url: postgres://qovpaywlriunio:d4e4b345aff6439740cd62ffd249b080458e075a98e8f938c39ecf080d6d2061@ec2-52-23-86-208.compute-1.amazonaws.com:5432/d6avbhvrcqjvbm?pool=5
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: boulder_bike_tour_api_development
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: boulder_bike_tour_api_test
+
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -71,7 +71,7 @@ test:
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
 #
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+  
 #
 # You can use this database configuration with:
 #
@@ -80,6 +80,5 @@ test:
 #
 production:
   <<: *default
-  database: boulder_bike_tour_api_production
-  username: boulder_bike_tour_api
-  password: <%= ENV['BOULDER_BIKE_TOUR_API_DATABASE_PASSWORD'] %>
+
+  
