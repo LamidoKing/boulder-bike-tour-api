@@ -15,14 +15,20 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  url: postgres://qovpaywlriunio:d4e4b345aff6439740cd62ffd249b080458e075a98e8f938c39ecf080d6d2061@ec2-52-23-86-208.compute-1.amazonaws.com:5432/d6avbhvrcqjvbm?pool=5
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
   <<: *default
+  database: db/development.sqlite3
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: db/test.sqlite3
 
 
   # The specified database role being used to connect to postgres.
@@ -83,6 +89,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  <<: 
+    adapter: postgresql
+    encoding: unicode
+    url: postgres://qovpaywlriunio:d4e4b345aff6439740cd62ffd249b080458e075a98e8f938c39ecf080d6d2061@ec2-52-23-86-208.compute-1.amazonaws.com:5432/d6avbhvrcqjvbm?pool=5
 
   
