@@ -27,6 +27,16 @@ class Api::V1::SubmissionsControllerTest < ActionDispatch::IntegrationTest
     assert_response 201
   end
 
+  test "should not create submission with taken email" do
+    assert_no_difference('Submission.count') do
+      post api_v1_submissions_url, 
+      params: { submission: { first_name: @submission.first_name, last_name: @submission.last_name, 
+       email: @submission.email, slogan: @submission.slogan } }, as: :json
+    end
+
+    assert_response :unprocessable_entity
+  end
+
   test "should show submission" do
     get api_v1_submission_url(@submission),
     headers: { Authorization: "Bearer " + JsonWebToken.encode(adminId: @admin.id ) }, as: :json
