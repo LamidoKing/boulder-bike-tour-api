@@ -6,12 +6,12 @@ class Api::V1::RidersController < ApplicationController
   def index
     @riders = Rider.all
 
-    render json: @riders
+    render json: @riders, include: [:photo]
   end
 
   # GET /api/v1/riders/1
   def show
-    render json: @rider
+    render json: @rider, include: [:photo]
   end
 
   # POST /api/v1/riders
@@ -19,7 +19,8 @@ class Api::V1::RidersController < ApplicationController
     @rider = current_admin.riders.build(rider_params)
 
     if @rider.save
-      render json: @rider, status: :created
+
+      render json: @rider, include: [:photo], status: :created
     else
       render json: @rider.errors, status: :unprocessable_entity
     end
@@ -27,8 +28,10 @@ class Api::V1::RidersController < ApplicationController
 
   # PATCH/PUT /api/v1/riders/1
   def update
+
     if @rider.update(rider_params)
-      render json: @rider
+      
+      render json: @rider, include: [:photo]
     else
       render json: @rider.errors, status: :unprocessable_entity
     end
@@ -47,6 +50,6 @@ class Api::V1::RidersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def rider_params
-      params.fetch(:rider, {}).permit(:first_name, :last_name, :city_of_origin, :state_of_origin, :latitude, :longitude)
+      params.fetch(:rider, {}).permit(:first_name, :last_name, :city_of_origin, :state_of_origin, :latitude, :longitude, :photo)
     end
 end

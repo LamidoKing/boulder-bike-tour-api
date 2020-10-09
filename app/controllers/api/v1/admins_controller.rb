@@ -12,7 +12,7 @@ class Api::V1::AdminsController < ApplicationController
     @admin = Admin.new(admin_params)
 
     if @admin.save
-      render json: @admin, status: :created
+      render json: @admin, except: [:password_digest], status: :created
     else
       render json: @admin.errors, status: :unprocessable_entity
     end
@@ -23,7 +23,7 @@ class Api::V1::AdminsController < ApplicationController
 
     if @admin&.authenticate(admin_params[:password])
       token = JsonWebToken.encode({adminId: @admin.id})
-      render json: {admin: @admin, token: token}
+      render json: {admin: @admin, token: token}, except: [:password_digest]
     else
       head :unauthorized
     end

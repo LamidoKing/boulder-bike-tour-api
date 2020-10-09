@@ -5,23 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Admin.delete_all
 Rider.delete_all
+Admin.delete_all
 Submission.delete_all
 
 admin = Admin.create(
     email: "kinglamido@gmail.com",
     password: "lamido"
 )
-rider1 = Rider.create!(
+
+puts(admin.id)
+
+rider1 = Rider.create(
     first_name: "Dustin",
     last_name: "Green",
     city_of_origin: "Hickory Hills",
     state_of_origin: "IL",
     latitude: 40.00,
     longitude: -105.35,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider1.photo.attach(io: File.open("/home/lmd/Downloads/r1.jpg"), filename: 'r1.jpg', content_type: 'image/jpg')
 
 rider2 = Rider.create!(
     first_name: "Jason",
@@ -30,8 +34,9 @@ rider2 = Rider.create!(
     state_of_origin: "CA",
     latitude: 39.95,
     longitude: -105.24,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider2.photo.attach(io: File.open("/home/lmd/Downloads/r2.jpg"), filename: 'r2.jpg', content_type: 'image/jpg')
 
 rider3 = Rider.create!(
     first_name: "Howard",
@@ -40,8 +45,9 @@ rider3 = Rider.create!(
     state_of_origin: "MO",
     latitude: 40.06,
     longitude: -105.26,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider3.photo.attach(io: File.open("/home/lmd/Downloads/r3.jpg"), filename: 'r3.jpg', content_type: 'image/jpg')
 
 rider4 = Rider.create!(
     first_name: "Maggie",
@@ -50,8 +56,9 @@ rider4 = Rider.create!(
     state_of_origin: "OH",
     latitude: 40.03,
     longitude: -105.23,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider4.photo.attach(io: File.open("/home/lmd/Downloads/r4.jpg"), filename: 'r4.jpg', content_type: 'image/jpg')
 
 rider5 = Rider.create!(
     first_name: "Lawrence",
@@ -60,8 +67,9 @@ rider5 = Rider.create!(
     state_of_origin: "FL",
     latitude: 40.04,
     longitude: -105.23,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider5.photo.attach(io: File.open("/home/lmd/Downloads/r5.jpg"), filename: 'r5.jpg', content_type: 'image/jpg')
 
 rider6 = Rider.create!(
     first_name: "Irene",
@@ -70,8 +78,10 @@ rider6 = Rider.create!(
     state_of_origin: "AZ",
     latitude: 39.96,
     longitude: -105.22,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider6.photo.attach(io: File.open("/home/lmd/Downloads/r6.jpg"), filename: 'r6.jpg', content_type: 'image/jpg')
+
 
 rider7 = Rider.create!(
     first_name: "Nancy",
@@ -80,8 +90,9 @@ rider7 = Rider.create!(
     state_of_origin: "MD",
     latitude: 39.98,
     longitude: -105.21,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider7.photo.attach(io: File.open("/home/lmd/Downloads/r1.jpg"), filename: 'r1.jpg', content_type: 'image/jpg')
 
 rider8 = Rider.create!(
     first_name: "Tara",
@@ -90,8 +101,9 @@ rider8 = Rider.create!(
     state_of_origin: "MN",
     latitude: 40.00,
     longitude: -105.25,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider8.photo.attach(io: File.open("/home/lmd/Downloads/r2.jpg"), filename: 'r2.jpg', content_type: 'image/jpg')
 
 rider9 = Rider.create!(
     first_name: "Alejandro",
@@ -100,8 +112,9 @@ rider9 = Rider.create!(
     state_of_origin: "ME",
     latitude: 40.02,
     longitude: -105.26,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider9.photo.attach(io: File.open("/home/lmd/Downloads/r3.jpg"), filename: 'r3.jpg', content_type: 'image/jpg')
 
 rider10 = Rider.create!(
     first_name: "Tricia",
@@ -110,8 +123,9 @@ rider10 = Rider.create!(
     state_of_origin: "CT",
     latitude: 40.02,
     longitude: -105.30,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider10.photo.attach(io: File.open("/home/lmd/Downloads/r4.jpg"), filename: 'r4.jpg', content_type: 'image/jpg')
 
 rider11 = Rider.create!(
     first_name: "Travis",
@@ -120,8 +134,9 @@ rider11 = Rider.create!(
     state_of_origin: "WI",
     latitude: 40.01,
     longitude: -105.20,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider11.photo.attach(io: File.open("/home/lmd/Downloads/r5.jpg"), filename: 'r5.jpg', content_type: 'image/jpg')
 
 rider12 = Rider.create!(
     first_name: "Joan",
@@ -130,8 +145,10 @@ rider12 = Rider.create!(
     state_of_origin: "VA",
     latitude: 39.98,
     longitude: -105.24,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider12.photo.attach(io: File.open("/home/lmd/Downloads/r6.jpg"), filename: 'r6.jpg', content_type: 'image/jpg')
+
 
 rider13 = Rider.create!(
     first_name: "Joseph",
@@ -140,8 +157,9 @@ rider13 = Rider.create!(
     state_of_origin: "NJ",
     latitude: 39.99,
     longitude: -105.25,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider13.photo.attach(io: File.open("/home/lmd/Downloads/r1.jpg"), filename: 'r1.jpg', content_type: 'image/jpg')
 
 rider14 = Rider.create!(
     first_name: "Matthew",
@@ -150,8 +168,9 @@ rider14 = Rider.create!(
     state_of_origin: "MO",
     latitude: 40.01,
     longitude: -105.29,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider14.photo.attach(io: File.open("/home/lmd/Downloads/r2.jpg"), filename: 'r2.jpg', content_type: 'image/jpg')
 
 rider15 = Rider.create!(
     first_name: "Katie",
@@ -160,8 +179,9 @@ rider15 = Rider.create!(
     state_of_origin: "VA",
     latitude: 39.97,
     longitude: -105.27,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider15.photo.attach(io: File.open("/home/lmd/Downloads/r3.jpg"), filename: 'r3.jpg', content_type: 'image/jpg')
 
 rider16 = Rider.create!(
     first_name: "Leo",
@@ -170,8 +190,9 @@ rider16 = Rider.create!(
     state_of_origin: "TX",
     latitude: 39.97,
     longitude: -105.33,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider16.photo.attach(io: File.open("/home/lmd/Downloads/r4.jpg"), filename: 'r4.jpg', content_type: 'image/jpg')
 
 rider17 = Rider.create!(
     first_name: "Maria",
@@ -180,8 +201,9 @@ rider17 = Rider.create!(
     state_of_origin: "NC",
     latitude: 40.00,
     longitude: -105.29,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider17.photo.attach(io: File.open("/home/lmd/Downloads/r5.jpg"), filename: 'r5.jpg', content_type: 'image/jpg')
 
 rider18 = Rider.create!(
     first_name: "Sandy",
@@ -190,8 +212,9 @@ rider18 = Rider.create!(
     state_of_origin: "PA",
     latitude: 40.05,
     longitude: -105.30,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider18.photo.attach(io: File.open("/home/lmd/Downloads/r6.jpg"), filename: 'r6.jpg', content_type: 'image/jpg')
 
 rider19 = Rider.create!(
     first_name: "Melinda",
@@ -200,8 +223,10 @@ rider19 = Rider.create!(
     state_of_origin: "HI",
     latitude: 39.99,
     longitude: -105.31,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider19.photo.attach(io: File.open("/home/lmd/Downloads/r6.jpg"), filename: 'r6.jpg', content_type: 'image/jpg')
+
 rider20 = Rider.create!(
     first_name: "Jason",
     last_name: "Nichols",
@@ -209,8 +234,9 @@ rider20 = Rider.create!(
     state_of_origin: "VA",
     latitude: 40.01,
     longitude: -105.32,
-    admin_id: 1
+    admin_id: admin.id,
     )
+    rider20.photo.attach(io: File.open("/home/lmd/Downloads/r2.jpg"), filename: 'r2.jpg', content_type: 'image/jpg')
 
     puts "Created Riders"
 
