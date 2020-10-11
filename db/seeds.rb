@@ -11,7 +11,7 @@ Submission.delete_all
 
 admin = Admin.create(
     email: "kinglamido@gmail.com",
-    password: "lamido"
+    password: "Lamidotijjani"
 )
 
 puts(admin.id)
@@ -25,7 +25,7 @@ rider1 = Rider.create(
     longitude: -105.35,
     admin_id: admin.id,
     )
-    rider1.photo.attach(io: File.open("/home/lmd/Downloads/r1.jpg"), filename: 'r1.jpg', content_type: 'image/jpg')
+    rider1.photo.attach(io: File.open(Rails.root.join("ridersImages/r1.webp")), filename: 'r1.webp', content_type: 'image/webp')
 
 rider2 = Rider.create!(
     first_name: "Jason",
@@ -36,7 +36,7 @@ rider2 = Rider.create!(
     longitude: -105.24,
     admin_id: admin.id,
     )
-    rider2.photo.attach(io: File.open("/home/lmd/Downloads/r2.jpg"), filename: 'r2.jpg', content_type: 'image/jpg')
+    rider2.photo.attach(io: File.open(Rails.root.join("ridersImages/r2.webp")), filename: 'r2.webp', content_type: 'image/webp')
 
 rider3 = Rider.create!(
     first_name: "Howard",
@@ -47,7 +47,7 @@ rider3 = Rider.create!(
     longitude: -105.26,
     admin_id: admin.id,
     )
-    rider3.photo.attach(io: File.open("/home/lmd/Downloads/r3.jpg"), filename: 'r3.jpg', content_type: 'image/jpg')
+    rider3.photo.attach(io: File.open(Rails.root.join("ridersImages/r3.webp")), filename: 'r3.webp', content_type: 'image/webp')
 
 rider4 = Rider.create!(
     first_name: "Maggie",
@@ -58,7 +58,7 @@ rider4 = Rider.create!(
     longitude: -105.23,
     admin_id: admin.id,
     )
-    rider4.photo.attach(io: File.open("/home/lmd/Downloads/r4.jpg"), filename: 'r4.jpg', content_type: 'image/jpg')
+    rider4.photo.attach(io: File.open(Rails.root.join("ridersImages/r4.webp")), filename: 'r4.webp', content_type: 'image/webp')
 
 rider5 = Rider.create!(
     first_name: "Lawrence",
@@ -69,7 +69,7 @@ rider5 = Rider.create!(
     longitude: -105.23,
     admin_id: admin.id,
     )
-    rider5.photo.attach(io: File.open("/home/lmd/Downloads/r5.jpg"), filename: 'r5.jpg', content_type: 'image/jpg')
+    rider5.photo.attach(io: File.open(Rails.root.join("ridersImages/r5.webp")), filename: 'r5.webp', content_type: 'image/webp')
 
 rider6 = Rider.create!(
     first_name: "Irene",
@@ -80,7 +80,7 @@ rider6 = Rider.create!(
     longitude: -105.22,
     admin_id: admin.id,
     )
-    rider6.photo.attach(io: File.open("/home/lmd/Downloads/r6.jpg"), filename: 'r6.jpg', content_type: 'image/jpg')
+    rider6.photo.attach(io: File.open(Rails.root.join("ridersImages/r6.webp")), filename: 'r6.webp', content_type: 'image/webp')
 
 
 rider7 = Rider.create!(
@@ -92,7 +92,7 @@ rider7 = Rider.create!(
     longitude: -105.21,
     admin_id: admin.id,
     )
-    rider7.photo.attach(io: File.open("/home/lmd/Downloads/r1.jpg"), filename: 'r1.jpg', content_type: 'image/jpg')
+    rider7.photo.attach(io: File.open(Rails.root.join("ridersImages/r7.webp")), filename: 'r7.webp', content_type: 'image/webp')
 
 rider8 = Rider.create!(
     first_name: "Tara",
@@ -103,7 +103,7 @@ rider8 = Rider.create!(
     longitude: -105.25,
     admin_id: admin.id,
     )
-    rider8.photo.attach(io: File.open("/home/lmd/Downloads/r2.jpg"), filename: 'r2.jpg', content_type: 'image/jpg')
+    rider8.photo.attach(io: File.open(Rails.root.join("ridersImages/r8.webp")), filename: 'r8.webp', content_type: 'image/webp')
 
 rider9 = Rider.create!(
     first_name: "Alejandro",
@@ -114,7 +114,7 @@ rider9 = Rider.create!(
     longitude: -105.26,
     admin_id: admin.id,
     )
-    rider9.photo.attach(io: File.open("/home/lmd/Downloads/r3.jpg"), filename: 'r3.jpg', content_type: 'image/jpg')
+    rider9.photo.attach(io: File.open(Rails.root.join"ridersImages/r9.webp"), filename: 'r9.webp', content_type: 'image/webp')
 
 rider10 = Rider.create!(
     first_name: "Tricia",
@@ -125,7 +125,7 @@ rider10 = Rider.create!(
     longitude: -105.30,
     admin_id: admin.id,
     )
-    rider10.photo.attach(io: File.open("/home/lmd/Downloads/r4.jpg"), filename: 'r4.jpg', content_type: 'image/jpg')
+    rider10.photo.attach(io: File.open(Rails.root.join("ridersImages/r10.webp")), filename: 'r10.webp', content_type: 'image/webp')
 
 rider11 = Rider.create!(
     first_name: "Travis",
@@ -136,7 +136,7 @@ rider11 = Rider.create!(
     longitude: -105.20,
     admin_id: admin.id,
     )
-    rider11.photo.attach(io: File.open("/home/lmd/Downloads/r5.jpg"), filename: 'r5.jpg', content_type: 'image/jpg')
+    rider11.photo.attach(io: File.open(Rails.root.join("ridersImages/r11.webp")), filename: 'r11.webp', content_type: 'image/webp')
 
 rider12 = Rider.create!(
     first_name: "Joan",
@@ -147,7 +147,7 @@ rider12 = Rider.create!(
     longitude: -105.24,
     admin_id: admin.id,
     )
-    rider12.photo.attach(io: File.open("/home/lmd/Downloads/r6.jpg"), filename: 'r6.jpg', content_type: 'image/jpg')
+    rider12.photo.attach(io: File.open(Rails.root.join("ridersImages/r12.webp")), filename: 'r12.webp', content_type: 'image/webp')
 
 
 rider13 = Rider.create!(
@@ -159,7 +159,7 @@ rider13 = Rider.create!(
     longitude: -105.25,
     admin_id: admin.id,
     )
-    rider13.photo.attach(io: File.open("/home/lmd/Downloads/r1.jpg"), filename: 'r1.jpg', content_type: 'image/jpg')
+    rider13.photo.attach(io: File.open(Rails.root.join("ridersImages/r13.webp")), filename: 'r13.webp', content_type: 'image/webp')
 
 rider14 = Rider.create!(
     first_name: "Matthew",
@@ -170,7 +170,7 @@ rider14 = Rider.create!(
     longitude: -105.29,
     admin_id: admin.id,
     )
-    rider14.photo.attach(io: File.open("/home/lmd/Downloads/r2.jpg"), filename: 'r2.jpg', content_type: 'image/jpg')
+    rider14.photo.attach(io: File.open(Rails.root.join("ridersImages/r14.webp")), filename: 'r14.webp', content_type: 'image/webp')
 
 rider15 = Rider.create!(
     first_name: "Katie",
@@ -181,7 +181,7 @@ rider15 = Rider.create!(
     longitude: -105.27,
     admin_id: admin.id,
     )
-    rider15.photo.attach(io: File.open("/home/lmd/Downloads/r3.jpg"), filename: 'r3.jpg', content_type: 'image/jpg')
+    rider15.photo.attach(io: File.open(Rails.root.join("ridersImages/r15.webp")), filename: 'r15.webp', content_type: 'image/webp')
 
 rider16 = Rider.create!(
     first_name: "Leo",
@@ -192,7 +192,7 @@ rider16 = Rider.create!(
     longitude: -105.33,
     admin_id: admin.id,
     )
-    rider16.photo.attach(io: File.open("/home/lmd/Downloads/r4.jpg"), filename: 'r4.jpg', content_type: 'image/jpg')
+    rider16.photo.attach(io: File.open(Rails.root.join("ridersImages/r16.webp")), filename: 'r16.webp', content_type: 'image/webp')
 
 rider17 = Rider.create!(
     first_name: "Maria",
@@ -203,7 +203,7 @@ rider17 = Rider.create!(
     longitude: -105.29,
     admin_id: admin.id,
     )
-    rider17.photo.attach(io: File.open("/home/lmd/Downloads/r5.jpg"), filename: 'r5.jpg', content_type: 'image/jpg')
+    rider17.photo.attach(io: File.open(Rails.root.join("ridersImages/r17.webp")), filename: 'r17.webp', content_type: 'image/webp')
 
 rider18 = Rider.create!(
     first_name: "Sandy",
@@ -214,7 +214,7 @@ rider18 = Rider.create!(
     longitude: -105.30,
     admin_id: admin.id,
     )
-    rider18.photo.attach(io: File.open("/home/lmd/Downloads/r6.jpg"), filename: 'r6.jpg', content_type: 'image/jpg')
+    rider18.photo.attach(io: File.open(Rails.root.join("ridersImages/r18.webp")), filename: 'r18.webp', content_type: 'image/webp')
 
 rider19 = Rider.create!(
     first_name: "Melinda",
@@ -225,7 +225,7 @@ rider19 = Rider.create!(
     longitude: -105.31,
     admin_id: admin.id,
     )
-    rider19.photo.attach(io: File.open("/home/lmd/Downloads/r6.jpg"), filename: 'r6.jpg', content_type: 'image/jpg')
+    rider19.photo.attach(io: File.open(Rails.root.join("ridersImages/r19.webp")), filename: 'r19.webp', content_type: 'image/webp')
 
 rider20 = Rider.create!(
     first_name: "Jason",
@@ -236,7 +236,7 @@ rider20 = Rider.create!(
     longitude: -105.32,
     admin_id: admin.id,
     )
-    rider20.photo.attach(io: File.open("/home/lmd/Downloads/r2.jpg"), filename: 'r2.jpg', content_type: 'image/jpg')
+    rider20.photo.attach(io: File.open(Rails.root.join("ridersImages/r20.webp")), filename: 'r20.webp', content_type: 'image/webp')
 
     puts "Created Riders"
 
